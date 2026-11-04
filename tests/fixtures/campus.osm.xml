@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="AccessTrace test fixture">
+  <node id="1" lat="40.0000" lon="-74.0000" />
+  <node id="2" lat="40.0000" lon="-73.9999">
+    <tag k="kerb" v="raised" />
+  </node>
+  <node id="3" lat="40.0000" lon="-73.9998" />
+  <node id="4" lat="40.0000" lon="-73.9997" />
+  <node id="5" lat="40.0001" lon="-73.9997" />
+  <node id="6" lat="40.0001" lon="-73.9996" />
+  <node id="7" lat="40.0000" lon="-73.9996" />
+
+  <way id="100">
+    <nd ref="1" />
+    <nd ref="2" />
+    <nd ref="3" />
+    <tag k="highway" v="footway" />
+    <tag k="surface" v="concrete" />
+  </way>
+
+  <way id="101">
+    <nd ref="3" />
+    <nd ref="4" />
+    <tag k="highway" v="steps" />
+    <tag k="ramp:wheelchair" v="yes" />
+  </way>
+
+  <way id="200">
+    <nd ref="4" />
+    <nd ref="5" />
+    <nd ref="6" />
+    <nd ref="7" />
+    <nd ref="4" />
+    <tag k="building" v="yes" />
+    <tag k="name" v="Test Library" />
+  </way>
+
+  <way id="300">
+    <nd ref="1" />
+    <nd ref="7" />
+    <tag k="highway" v="residential" />
+  </way>
+</osm>

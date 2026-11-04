@@ -33,6 +33,19 @@ class CandidateRouteTests(unittest.TestCase):
         self.assertEqual(route.nodes, ("start", "open", "end"))
         self.assertIn("blocked:start", route.excluded_edges)
 
+    def test_avoids_explicit_wheelchair_no(self) -> None:
+        edges = (
+            RouteEdge("start", "blocked", 3, {"highway": "footway", "wheelchair": "no"}),
+            RouteEdge("blocked", "end", 3, {"highway": "footway"}),
+            RouteEdge("start", "open", 5, {"highway": "footway", "wheelchair": "yes"}),
+            RouteEdge("open", "end", 5, {"highway": "footway", "surface": "asphalt"}),
+        )
+
+        route = find_candidate_route(edges, "start", "end")
+
+        self.assertEqual(route.nodes, ("start", "open", "end"))
+        self.assertIn("blocked:start", route.excluded_edges)
+
     def test_allows_steps_with_designated_wheelchair_ramp(self) -> None:
         edges = (
             RouteEdge(

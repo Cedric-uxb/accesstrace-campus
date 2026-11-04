@@ -65,6 +65,8 @@ def _normalized_barriers(active_barriers: Iterable[str]) -> frozenset[str]:
 def _is_blocked(edge: RouteEdge, active_barriers: frozenset[str]) -> bool:
     if edge.edge_id in active_barriers:
         return True
+    if edge.tags.get("wheelchair") == "no":
+        return True
     if edge.tags.get("kerb") == "raised":
         return True
     return edge.tags.get("highway") == "steps" and edge.tags.get("ramp:wheelchair") not in {
