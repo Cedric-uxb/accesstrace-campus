@@ -14,7 +14,7 @@ class OsmParserTests(unittest.TestCase):
     def test_extracts_only_supported_pedestrian_edges(self) -> None:
         graph = parse_osm(FIXTURE)
 
-        self.assertEqual(len(graph.edges), 3)
+        self.assertEqual(len(graph.edges), 6)
         self.assertEqual(
             {edge.tags["highway"] for edge in graph.edges},
             {"footway", "steps"},
@@ -26,6 +26,7 @@ class OsmParserTests(unittest.TestCase):
         edges = {edge.edge_id: edge for edge in graph.edges}
 
         self.assertEqual(edges["1:2"].tags["surface"], "concrete")
+        self.assertEqual(edges["1:2"].tags["access"], "no")
         self.assertEqual(edges["1:2"].tags["kerb"], "raised")
         self.assertEqual(edges["2:3"].tags["kerb"], "raised")
         self.assertEqual(edges["3:4"].tags["ramp:wheelchair"], "yes")
@@ -33,9 +34,11 @@ class OsmParserTests(unittest.TestCase):
     def test_maps_named_building_to_nearest_pedestrian_node(self) -> None:
         graph = parse_osm(FIXTURE)
 
-        self.assertEqual(len(graph.places), 1)
-        self.assertEqual(graph.places[0].name, "Test Library")
-        self.assertEqual(graph.places[0].nearest_node_id, "4")
+        places = {place.name: place for place in graph.places}
+        self.assertEqual(set(places), {"Test Annex", "Test Hall", "Test Library"})
+        self.assertEqual(places["Test Annex"].nearest_node_id, "1")
+        self.assertEqual(places["Test Hall"].nearest_node_id, "1")
+        self.assertEqual(places["Test Library"].nearest_node_id, "4")
 
     def test_rejects_way_that_references_missing_node(self) -> None:
         malformed = StringIO(

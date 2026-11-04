@@ -7,7 +7,7 @@ from types import MappingProxyType
 from typing import IO, Mapping
 import xml.etree.ElementTree as ET
 
-from accesstrace.routing import ACCESSIBILITY_TAGS, RouteEdge
+from accesstrace.routing import ACCESSIBILITY_TAGS, BLOCKED_ACCESS_VALUES, ROUTING_TAGS, RouteEdge
 
 
 SUPPORTED_HIGHWAYS = frozenset({"footway", "path", "pedestrian", "steps"})
@@ -58,19 +58,23 @@ def _combined_edge_tags(
     combined = {
         key: value
         for key, value in way_tags.items()
-        if key == "highway" or key in ACCESSIBILITY_TAGS
+        if key == "highway" or key in ROUTING_TAGS
     }
     endpoint_tags = (first.tags, second.tags)
 
-    for key in ACCESSIBILITY_TAGS:
-        values = [tags[key] for tags in endpoint_tags if key in tags]
-        if not values or key in combined:
+    for key in ROUTING_TAGS:
+        values = ([combined[key]] if key in combined else []) + [
+            tags[key] for tags in endpoint_tags if key in tags
+        ]
+        if not values:
             continue
         if key == "kerb" and "raised" in values:
             combined[key] = "raised"
         elif key == "wheelchair" and "no" in values:
             combined[key] = "no"
-        else:
+        elif key in {"access", "foot"} and BLOCKED_ACCESS_VALUES.intersection(values):
+            combined[key] = "no" if "no" in values else "private"
+        elif key not in combined:
             combined[key] = values[0]
 
     return combined

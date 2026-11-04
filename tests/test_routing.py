@@ -46,6 +46,22 @@ class CandidateRouteTests(unittest.TestCase):
         self.assertEqual(route.nodes, ("start", "open", "end"))
         self.assertIn("blocked:start", route.excluded_edges)
 
+    def test_avoids_explicit_access_or_foot_restrictions(self) -> None:
+        edges = (
+            RouteEdge("start", "access-blocked", 2, {"highway": "footway", "access": "private"}),
+            RouteEdge("access-blocked", "end", 2, {"highway": "footway"}),
+            RouteEdge("start", "foot-blocked", 3, {"highway": "path", "foot": "no"}),
+            RouteEdge("foot-blocked", "end", 3, {"highway": "footway"}),
+            RouteEdge("start", "open", 5, {"highway": "footway"}),
+            RouteEdge("open", "end", 5, {"highway": "footway"}),
+        )
+
+        route = find_candidate_route(edges, "start", "end")
+
+        self.assertEqual(route.nodes, ("start", "open", "end"))
+        self.assertIn("access-blocked:start", route.excluded_edges)
+        self.assertIn("foot-blocked:start", route.excluded_edges)
+
     def test_allows_steps_with_designated_wheelchair_ramp(self) -> None:
         edges = (
             RouteEdge(

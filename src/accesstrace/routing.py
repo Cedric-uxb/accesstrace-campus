@@ -16,6 +16,8 @@ ACCESSIBILITY_TAGS = frozenset(
         "ramp:wheelchair",
     }
 )
+ROUTING_TAGS = ACCESSIBILITY_TAGS | frozenset({"access", "foot"})
+BLOCKED_ACCESS_VALUES = frozenset({"no", "private"})
 
 
 class NoRouteError(ValueError):
@@ -48,6 +50,7 @@ class RouteEdge:
 @dataclass(frozen=True)
 class CandidateRoute:
     nodes: tuple[str, ...]
+    edges: tuple[RouteEdge, ...]
     distance_m: float
     evidence_coverage: float
     unknown_edges: tuple[str, ...]
@@ -66,6 +69,10 @@ def _is_blocked(edge: RouteEdge, active_barriers: frozenset[str]) -> bool:
     if edge.edge_id in active_barriers:
         return True
     if edge.tags.get("wheelchair") == "no":
+        return True
+    if edge.tags.get("access") in BLOCKED_ACCESS_VALUES:
+        return True
+    if edge.tags.get("foot") in BLOCKED_ACCESS_VALUES:
         return True
     if edge.tags.get("kerb") == "raised":
         return True
@@ -134,6 +141,7 @@ def find_candidate_route(
 
     return CandidateRoute(
         nodes=tuple(nodes),
+        edges=tuple(route_edges),
         distance_m=distances[end],
         evidence_coverage=coverage,
         unknown_edges=unknown,

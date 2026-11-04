@@ -7,6 +7,10 @@ name = "accesstrace-campus"
 version = "0.1.0"
 description = "Evidence-first candidate routing for outdoor campus accessibility"
 requires-python = ">=3.11"
+dependencies = ["streamlit"]
+
+[project.optional-dependencies]
+dev = ["coverage"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

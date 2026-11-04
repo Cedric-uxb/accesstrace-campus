@@ -9,12 +9,17 @@
   <node id="5" lat="40.0001" lon="-73.9997" />
   <node id="6" lat="40.0001" lon="-73.9996" />
   <node id="7" lat="40.0000" lon="-73.9996" />
+  <node id="8" lat="40.0001" lon="-73.99995" />
+  <node id="9" lat="40.0001" lon="-73.99985" />
+  <node id="10" lat="39.9999" lon="-74.0000" />
+  <node id="11" lat="39.9999" lon="-73.9999" />
 
   <way id="100">
     <nd ref="1" />
     <nd ref="2" />
     <nd ref="3" />
     <tag k="highway" v="footway" />
+    <tag k="access" v="no" />
     <tag k="surface" v="concrete" />
   </way>
 
@@ -25,6 +30,16 @@
     <tag k="ramp:wheelchair" v="yes" />
   </way>
 
+  <way id="102">
+    <nd ref="1" />
+    <nd ref="8" />
+    <nd ref="9" />
+    <nd ref="3" />
+    <tag k="highway" v="footway" />
+    <tag k="surface" v="asphalt" />
+    <tag k="wheelchair" v="yes" />
+  </way>
+
   <way id="200">
     <nd ref="4" />
     <nd ref="5" />
@@ -33,6 +48,27 @@
     <nd ref="4" />
     <tag k="building" v="yes" />
     <tag k="name" v="Test Library" />
+  </way>
+
+
+  <way id="201">
+    <nd ref="1" />
+    <nd ref="10" />
+    <nd ref="11" />
+    <nd ref="2" />
+    <nd ref="1" />
+    <tag k="building" v="yes" />
+    <tag k="name" v="Test Hall" />
+  </way>
+
+  <way id="202">
+    <nd ref="1" />
+    <nd ref="10" />
+    <nd ref="11" />
+    <nd ref="2" />
+    <nd ref="1" />
+    <tag k="building" v="yes" />
+    <tag k="name" v="Test Annex" />
   </way>
 
   <way id="300">
