@@ -28,4 +28,10 @@ The default PyDeck view requests CARTO basemap tiles in the user's browser.
 
 - Attribution: <https://carto.com/about-carto/>
 
+## Orpheus TTS
+
+The demo voice-over is generated locally with Orpheus TTS using the `tara` voice. Orpheus TTS is licensed under the Apache License 2.0.
+
+- Source: <https://github.com/canopyai/Orpheus-TTS>
+
 Transitive Python dependencies retain their respective licenses. This notice does not replace those license texts.

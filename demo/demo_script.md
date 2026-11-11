@@ -1,5 +1,7 @@
 # AccessTrace Campus Demo Script
 
+The repository includes a 1:45 automated cut with local Orpheus TTS narration at [AccessTrace-Campus-Demo.mp4](AccessTrace-Campus-Demo.mp4). The timeline below remains the manual screen-recording version.
+
 目标时长：约 2 分 30 秒。操作提示用中文，口播保持英文。
 
 ## 0:00-0:25 — Problem

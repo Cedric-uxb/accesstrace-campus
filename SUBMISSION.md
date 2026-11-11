@@ -59,13 +59,13 @@ Accessibility routing is as much a data-quality problem as a pathfinding problem
 
 ## Technologies
 
-Python, Streamlit, PyDeck, OpenStreetMap XML, unittest, coverage.py
+Python, Streamlit, PyDeck, OpenStreetMap XML, unittest, coverage.py, Orpheus TTS, FFmpeg
 
-## Links to add before submission
+## Links
 
-- Public repository: `TBD`
-- Live demo: `TBD`
-- Demo video: `TBD`
+- Public repository: <https://github.com/Cedric-uxb/accesstrace-campus>
+- Reproducible local demo: <https://github.com/Cedric-uxb/accesstrace-campus#run-locally>
+- Demo video: <https://github.com/Cedric-uxb/accesstrace-campus/blob/main/demo/AccessTrace-Campus-Demo.mp4>
 
 ## Final checklist
 

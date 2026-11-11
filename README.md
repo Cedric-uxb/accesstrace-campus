@@ -4,6 +4,8 @@ AccessTrace Campus is an evidence-first outdoor campus route prototype for peopl
 
 The first prototype is limited to Drew University's outdoor pedestrian network. It uses public OpenStreetMap data and does **not** certify that a route is accessible, safe, current, or field-verified.
 
+![AccessTrace Campus temporary-barrier reroute](docs/screenshots/access-trace-reroute.jpg)
+
 ## Status
 
 Functional MVP for the STEMergent Hacks 2026 Hackathon Pathway.
@@ -55,6 +57,10 @@ The complete Chinese design is in [设计文档.md](设计文档.md).
 
 ## Project documents
 
+- [Watch the 1:45 demo video](demo/AccessTrace-Campus-Demo.mp4)
 - [Third-party notices](THIRD_PARTY_NOTICES.md)
 - [Demo script](demo/demo_script.md)
+- [Desktop screenshot](docs/screenshots/access-trace-desktop.jpg)
+- [Temporary-barrier reroute](docs/screenshots/access-trace-reroute.jpg)
+- [Mobile screenshot](docs/screenshots/access-trace-mobile.jpg)
 - [Chinese implementation plan](PLAN.md)
