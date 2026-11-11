@@ -65,14 +65,14 @@ Python, Streamlit, PyDeck, OpenStreetMap XML, unittest, coverage.py, Orpheus TTS
 
 - Public repository: <https://github.com/Cedric-uxb/accesstrace-campus>
 - Reproducible local demo: <https://github.com/Cedric-uxb/accesstrace-campus#run-locally>
-- Demo video: <https://github.com/Cedric-uxb/accesstrace-campus/blob/main/demo/AccessTrace-Campus-Demo.mp4>
+- Demo video: <https://raw.githubusercontent.com/Cedric-uxb/accesstrace-campus/main/demo/AccessTrace-Campus-Demo.mp4>
 
 ## Final checklist
 
-- [ ] Public repository URL opens without login.
-- [ ] Live demo or reproducible local instructions are available.
-- [ ] Demo video is public or unlisted and no longer than 3 minutes.
-- [ ] Repository contains no raw OSM extract, token, private email, local path, or account information.
-- [ ] README, OSM/CARTO attribution, and third-party notices are visible.
+- [x] Public repository URL opens without login.
+- [x] Live demo or reproducible local instructions are available.
+- [x] Demo video is public or unlisted and no longer than 3 minutes.
+- [x] Repository contains no raw OSM extract, token, private email, local path, or account information.
+- [x] README, OSM/CARTO attribution, and third-party notices are visible.
 - [ ] Devpost deadline is rechecked immediately before submission; use the earlier published time if official pages still disagree.
 - [ ] Submission success page or receipt is saved before changing status to `submitted`.
