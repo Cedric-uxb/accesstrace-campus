@@ -18,7 +18,7 @@
 
 ## 当前下一步
 
-在 Devpost 开放提交时重新核对截止时间，填写 `SUBMISSION.md` 中的字段，并保存成功回执。
+登录 Devpost，注册 STEMergent Hacks 2026，按 `SUBMISSION.md` 创建 Hackathon Pathway 项目；最终提交前再次核对页面，并保存成功回执。
 
 ## 完成证据
 
@@ -30,6 +30,7 @@
 - 2026-11-03：临时全新环境从空 `data/raw/` 完成安装、实时 OSM 下载、20 个测试和 Streamlit HTTP 200，README 核心启动路径可复现。
 - 2026-11-11：完成桌面默认路线、673 米绕行结果和 `390×844` 手机截图；使用本地 Orpheus TTS `tara` 声音与 FFmpeg 生成 1080p、1:44.77 的无外部音频依赖演示视频。
 - 2026-11-11：公开仓库发布到 <https://github.com/Cedric-uxb/accesstrace-campus>；匿名 HTTP 访问返回 200，素材提交 commit 为 `49932d46900b37228f572aa2179b92b62fdd3c6f`，视频与三张截图均存在于远端。
+- 2026-11-11：实时核对 Devpost 官方页面。首页显示截止时间为 2026-11-15 9:30 PM CST，规则正文写 7:00 PM CST；继续采用更早的 7:00 PM CST 作为内部硬截止。官方要求允许提交代码或原型链接，未强制公网 Streamlit，因此不增加部署工作。当前浏览器未登录 Devpost，且页面显示尚未注册该 hackathon。
 
 ## 阻塞与风险
 

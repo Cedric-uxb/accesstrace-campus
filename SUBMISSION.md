@@ -1,6 +1,16 @@
 # AccessTrace Campus — Devpost Draft
 
-This file is a draft only. It is not evidence that a Devpost submission or public repository exists.
+This file is a Devpost submission draft. The public repository and demo assets exist, but the project has not been registered or submitted on Devpost.
+
+## Submission status
+
+- Pathway: Hackathon Pathway
+- Public repository: verified anonymously on November 11, 2026
+- Devpost account state: not logged in in the current browser session
+- Hackathon registration: not yet completed
+- Internal hard deadline: November 15, 2026 at 7:00 PM CST (8:00 PM EST)
+- Devpost overview deadline: November 15, 2026 at 9:30 PM CST (10:30 PM EST)
+- Reason for the earlier cutoff: the official rules body and overview disagree, so the earlier published time is used.
 
 ## Project name
 
@@ -61,11 +71,22 @@ Accessibility routing is as much a data-quality problem as a pathfinding problem
 
 Python, Streamlit, PyDeck, OpenStreetMap XML, unittest, coverage.py, Orpheus TTS, FFmpeg
 
+## AI and third-party resources
+
+- Orpheus TTS generated the English demo narration locally using the `tara` voice.
+- FFmpeg combined the narration and project screenshots into the demo video.
+- Streamlit and PyDeck power the interface and map visualization.
+- OpenStreetMap supplies the campus path data; CARTO supplies map tiles in the prototype.
+- AI-assisted development was used for planning, code review, debugging, documentation, and test preparation. The participant reviewed the implementation and can explain the routing rules and limitations.
+
 ## Links
 
 - Public repository: <https://github.com/Cedric-uxb/accesstrace-campus>
 - Reproducible local demo: <https://github.com/Cedric-uxb/accesstrace-campus#run-locally>
 - Demo video: <https://raw.githubusercontent.com/Cedric-uxb/accesstrace-campus/main/demo/AccessTrace-Campus-Demo.mp4>
+- Desktop screenshot: <https://raw.githubusercontent.com/Cedric-uxb/accesstrace-campus/main/docs/screenshots/access-trace-desktop.jpg>
+- Reroute screenshot: <https://raw.githubusercontent.com/Cedric-uxb/accesstrace-campus/main/docs/screenshots/access-trace-reroute.jpg>
+- Mobile screenshot: <https://raw.githubusercontent.com/Cedric-uxb/accesstrace-campus/main/docs/screenshots/access-trace-mobile.jpg>
 
 ## Final checklist
 
@@ -74,5 +95,7 @@ Python, Streamlit, PyDeck, OpenStreetMap XML, unittest, coverage.py, Orpheus TTS
 - [x] Demo video is public or unlisted and no longer than 3 minutes.
 - [x] Repository contains no raw OSM extract, token, private email, local path, or account information.
 - [x] README, OSM/CARTO attribution, and third-party notices are visible.
-- [ ] Devpost deadline is rechecked immediately before submission; use the earlier published time if official pages still disagree.
+- [x] Devpost deadline was checked on November 11, 2026; use the earlier 7:00 PM CST time if official pages still disagree.
+- [ ] Log in to Devpost and register for STEMergent Hacks 2026.
+- [ ] Create the AccessTrace Campus Hackathon Pathway submission and enter the prepared fields above.
 - [ ] Submission success page or receipt is saved before changing status to `submitted`.
